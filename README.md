@@ -2,6 +2,8 @@
 
 Package which provides useful types.
 
+### [Documentation](https://predictive-analytics-lab.github.io/tee/)
+
 ## Examples
 
 ### Constraint types without runtime overhead
