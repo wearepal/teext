@@ -6,7 +6,7 @@ on:
     - master
 
 jobs:
-  format_code:
+  ubuntu:
 
     runs-on: ubuntu-latest
 
