@@ -11,7 +11,7 @@ setup(
     description="Typing extensions extensions",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/predictive-analytics-lab/tee",
+    url="https://github.com/predictive-analytics-lab/teext",
     license="GPLv3",
     packages=find_packages(exclude=["tests.*", "tests"]),
     package_data={"teext": ["py.typed"]},

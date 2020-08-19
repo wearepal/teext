@@ -1,8 +1,8 @@
-# tee -- typing extensions extensions
+# teext -- typing extensions extensions
 
 Package which provides useful types.
 
-### [Documentation](https://predictive-analytics-lab.github.io/tee/)
+### [Documentation](https://predictive-analytics-lab.com/teext/)
 
 ## Examples
 
@@ -11,7 +11,7 @@ Package which provides useful types.
 These types are most useful in conjunction with static type checkers like mypy.
 
 ```python
-from tee import PositiveInt
+from teext import PositiveInt
 
 a = PositiveInt(5)  # OK
 
