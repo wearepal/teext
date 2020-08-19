@@ -8,7 +8,7 @@ Package which provides useful types.
 
 ### Constraint types without runtime overhead
 
-These types are only useful in conjunction with static type checkers like mypy.
+These types are most useful in conjunction with static type checkers like mypy.
 
 ```python
 from tee import PositiveInt
