@@ -4,7 +4,7 @@ with open("README.md") as f:
     long_description = f.read()
 
 setup(
-    name="tee",
+    name="teext",
     version="0.2.0.dev1",
     author="PAL",
     author_email="info@predictive-analytics-lab.com",
@@ -14,7 +14,7 @@ setup(
     url="https://github.com/predictive-analytics-lab/tee",
     license="GPLv3",
     packages=find_packages(exclude=["tests.*", "tests"]),
-    package_data={"tee": ["py.typed"]},
+    package_data={"teext": ["py.typed"]},
     python_requires=">=3.6",
     install_requires=[],
     classifiers=[

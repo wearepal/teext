@@ -1,7 +1,7 @@
 """Tests for constraints."""
 from pytest import raises
 
-from tee import Fraction, NaturalNum, Percentage, PositiveInt, Probability
+from teext import Fraction, NaturalNum, Percentage, PositiveInt, Probability
 
 
 def test_natural_num() -> None:
