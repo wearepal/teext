@@ -9,6 +9,7 @@ NaturalNum = NewType("NaturalNum", int)
 
 
 def _assert_natural_number(num: int) -> NaturalNum:
+    num = int(num)  # if it can be converted to a natural number, it's also fine
     assert num >= 0, f"{num} is not a natural number"
     return cast(NaturalNum, num)
 
@@ -21,6 +22,7 @@ PositiveInt = NewType("PositiveInt", int)
 
 
 def _assert_positive_int(num: int) -> PositiveInt:
+    num = int(num)  # if it can be converted to a positive int, it's also fine
     assert num > 0, f"{num} is not a positive integer"
     return cast(PositiveInt, num)
 
@@ -33,6 +35,7 @@ Fraction = NewType("Fraction", float)
 
 
 def _assert_fraction(num: float) -> Fraction:
+    num = float(num)  # if it can be converted to a fraction, it's also fine
     assert 0 <= num <= 1, f"{num} is not a fraction"
     return cast(Fraction, num)
 
@@ -45,6 +48,7 @@ Probability = NewType("Probability", float)
 
 
 def _assert_prob(num: float) -> Probability:
+    num = float(num)  # if it can be converted to a probability, it's also fine
     assert 0 <= num <= 1, f"{num} is not a probability"
     return cast(Probability, num)
 
@@ -57,6 +61,7 @@ Percentage = NewType("Percentage", float)
 
 
 def _assert_percentage(num: float) -> Percentage:
+    num = float(num)  # if it can be converted to a percentage, it's also fine
     assert 0 <= num <= 1, f"{num} is not a percentage"
     return cast(Percentage, num)
 

@@ -12,6 +12,17 @@ def test_natural_num() -> None:
         NaturalNum(-2)
 
 
+def test_natural_num_from_str() -> None:
+    x: NaturalNum = NaturalNum("0")  # type: ignore[arg-type]
+    assert isinstance(x, int)
+
+    with raises(AssertionError):
+        NaturalNum("-2")  # type: ignore[arg-type]
+
+    with raises(ValueError):
+        NaturalNum("asdf")  # type: ignore[arg-type]
+
+
 def test_positive_int() -> None:
     x: PositiveInt = PositiveInt(5)
     assert isinstance(x, int)
