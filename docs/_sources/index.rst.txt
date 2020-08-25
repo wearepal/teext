@@ -10,7 +10,7 @@ Welcome to Tee's documentation!
    :maxdepth: 1
    :caption: Contents:
 
-   tee.constraints
+   teext.constraints
 
 
 

@@ -1,6 +1,6 @@
-tee.constraints
+teext.constraints
 ====================
 
-.. automodule:: tee.constraints
+.. automodule:: teext.constraints
    :members:
    :imported-members:
