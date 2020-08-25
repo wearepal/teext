@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Welcome to Teext's documentation!
-===============================
+=================================
 
 .. toctree::
    :maxdepth: 1
