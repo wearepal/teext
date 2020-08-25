@@ -1,4 +1,4 @@
-# teext -- typing extensions extensions
+# teext – typing extensions extensions
 
 Package which provides useful types.
 
