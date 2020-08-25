@@ -1,7 +1,7 @@
 """Types that express a constraint."""
-from typing import NewType, cast
+from typing import Any, Callable, Dict, NewType, cast
 
-__all__ = ["Fraction", "NaturalNum", "Percentage", "PositiveInt", "Probability"]
+__all__ = ["Fraction", "NaturalNum", "Percentage", "PositiveInt", "Probability", "TYPE_HOOKS"]
 
 # ========================================= natural number ========================================
 NaturalNum = NewType("NaturalNum", int)
@@ -14,6 +14,7 @@ def _assert_natural_number(num: int) -> NaturalNum:
     return cast(NaturalNum, num)
 
 
+_assert_natural_number.__supertype__ = NaturalNum.__supertype__  # type: ignore[attr-defined]
 NaturalNum = _assert_natural_number  # type: ignore[misc,assignment]
 
 # ======================================== positive integer =======================================
@@ -27,6 +28,7 @@ def _assert_positive_int(num: int) -> PositiveInt:
     return cast(PositiveInt, num)
 
 
+_assert_positive_int.__supertype__ = PositiveInt.__supertype__  # type: ignore[attr-defined]
 PositiveInt = _assert_positive_int  # type: ignore[misc,assignment]
 
 # ============================================ fraction ===========================================
@@ -40,6 +42,7 @@ def _assert_fraction(num: float) -> Fraction:
     return cast(Fraction, num)
 
 
+_assert_fraction.__supertype__ = Fraction.__supertype__  # type: ignore[attr-defined]
 Fraction = _assert_fraction  # type: ignore[misc,assignment]
 
 # ========================================== probability ==========================================
@@ -53,6 +56,7 @@ def _assert_prob(num: float) -> Probability:
     return cast(Probability, num)
 
 
+_assert_prob.__supertype__ = Probability.__supertype__  # type: ignore[attr-defined]
 Probability = _assert_prob  # type: ignore[misc,assignment]
 
 # =========================================== percentage ==========================================
@@ -66,4 +70,14 @@ def _assert_percentage(num: float) -> Percentage:
     return cast(Percentage, num)
 
 
+_assert_percentage.__supertype__ = Percentage.__supertype__  # type: ignore[attr-defined]
 Percentage = _assert_percentage  # type: ignore[misc,assignment]
+
+
+TYPE_HOOKS: Dict[type, Callable[[Any], Any]] = {
+    Fraction: _assert_fraction,
+    NaturalNum: _assert_natural_number,
+    Percentage: _assert_percentage,
+    PositiveInt: _assert_positive_int,
+    Probability: _assert_prob,
+}
