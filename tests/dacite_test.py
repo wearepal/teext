@@ -3,16 +3,16 @@ from dataclasses import dataclass
 import dacite
 from pytest import raises
 
-from teext import Fraction, NaturalNum, Percentage, PositiveInt, Probability, TYPE_HOOKS
+import teext as tx
 
 
 @dataclass
 class Config:
-    fraction: Fraction
-    natural_num: NaturalNum
-    percentage: Percentage = Percentage(1.0)
-    positive_int: PositiveInt = PositiveInt(56)
-    probability: Probability = Probability(0.01)
+    fraction: tx.Fraction
+    natural_num: tx.NaturalNum
+    percentage: tx.Percentage = tx.Percentage(1.0)
+    positive_int: tx.PositiveInt = tx.PositiveInt(56)
+    probability: tx.Probability = tx.Probability(0.01)
 
 
 def test_load_all() -> None:
@@ -23,7 +23,7 @@ def test_load_all() -> None:
         "positive_int": 10,
         "probability": 0.5,
     }
-    config = dacite.from_dict(Config, data, config=dacite.Config(type_hooks=TYPE_HOOKS))
+    config = dacite.from_dict(Config, data, config=dacite.Config(type_hooks=tx.TYPE_HOOKS))
     assert config.fraction == data["fraction"]
 
 
@@ -32,7 +32,7 @@ def test_load_partial() -> None:
         "fraction": 0.9,
         "natural_num": 0,
     }
-    config = dacite.from_dict(Config, data, config=dacite.Config(type_hooks=TYPE_HOOKS))
+    config = dacite.from_dict(Config, data, config=dacite.Config(type_hooks=tx.TYPE_HOOKS))
     assert config.fraction == data["fraction"]
     assert config.percentage == 1.0
 
@@ -43,4 +43,4 @@ def test_load_fail() -> None:
         "natural_num": 0,
     }
     with raises(AssertionError, match=f"{data['fraction']} is not a fraction"):
-        dacite.from_dict(Config, data, config=dacite.Config(type_hooks=TYPE_HOOKS))
+        dacite.from_dict(Config, data, config=dacite.Config(type_hooks=tx.TYPE_HOOKS))
