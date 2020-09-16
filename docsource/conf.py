@@ -18,7 +18,7 @@ sys.path.insert(0, os.path.abspath(".."))
 
 # -- Project information -----------------------------------------------------
 
-project = "Tee"
+project = "Teext"
 copyright = "2020, PAL"
 author = "PAL"
 
@@ -32,7 +32,9 @@ autodoc_default_options = {
     "inherited-members": True,
     "show-inheritance": True,
     "autosummary": True,
+    "autosummary-no-nesting": True,
 }
+autodoc_typehints = "description"
 napoleon_numpy_docstring = False  # Force consistency, leave only Google
 napoleon_use_rtype = False  # More legible
 add_module_names = False

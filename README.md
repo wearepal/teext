@@ -1,4 +1,4 @@
-# teext -- typing extensions extensions
+# teext – typing extensions extensions
 
 Package which provides useful types.
 
@@ -11,15 +11,15 @@ Package which provides useful types.
 These types are most useful in conjunction with static type checkers like mypy.
 
 ```python
-from teext import PositiveInt
+import teext as tx
 
-a = PositiveInt(5)  # OK
+a = tx.PositiveInt(5)  # OK
 
-def f(x: PositiveInt) -> None:
+def f(x: tx.PositiveInt) -> None:
     print(x)
     
 f(a)  # OK
 f(7)  # works at runtime but mypy gives error
 
-b = PositiveInt(-3)  # AssertionError
+b = tx.PositiveInt(-3)  # AssertionError
 ```
