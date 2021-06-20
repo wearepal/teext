@@ -17,7 +17,7 @@ def test_positive_int() -> None:
     assert tx.assert_positive_int(y)
     x = y
     assert isinstance(x, int)
-    assert not tx.assert_natural_num(0)
+    assert not tx.assert_positive_int(0)
 
 
 def test_fraction() -> None:
