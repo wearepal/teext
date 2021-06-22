@@ -26,10 +26,12 @@ NaturalNum = NewType("NaturalNum", int)
 
 
 def is_natural_num(num: int) -> TypeGuard[NaturalNum]:
+    """Check whether the given number is a natural number."""
     return num >= 0
 
 
 def assert_natural_num(num: int) -> NaturalNum:
+    """Assert that the given number is a natural number."""
     assert is_natural_num(num), f"{num} is not a natural number"
     return num
 
@@ -40,10 +42,12 @@ PositiveInt = NewType("PositiveInt", int)
 
 
 def is_positive_int(num: int) -> TypeGuard[PositiveInt]:
+    """Check whether the given number is a positive integer."""
     return num > 0
 
 
 def assert_positive_int(num: int) -> PositiveInt:
+    """Assert that the given number is a positive integer."""
     assert is_positive_int(num), "{num} is not a positive integer"
     return num
 
@@ -54,10 +58,12 @@ Fraction = NewType("Fraction", float)
 
 
 def is_fraction(num: float) -> TypeGuard[Fraction]:
+    """Check whether the given number is a fraction."""
     return 0 <= num <= 1
 
 
 def assert_fraction(num: float) -> Fraction:
+    """Assert that the given number is a fraction."""
     assert is_fraction(num), "{num} is not a fraction"
     return num
 
@@ -68,10 +74,12 @@ Probability = NewType("Probability", float)
 
 
 def is_prob(num: float) -> TypeGuard[Probability]:
+    """Check whether the given number is a probability."""
     return 0 <= num <= 1
 
 
 def assert_prob(num: float) -> Probability:
+    """Assert that the given number is a probability."""
     assert is_prob(num), "{num} is not a probability"
     return num
 
@@ -82,9 +90,11 @@ Percentage = NewType("Percentage", float)
 
 
 def is_percentage(num: float) -> TypeGuard[Percentage]:
+    """Check whether the given number is a percentage."""
     return 0 <= num <= 1
 
 
 def assert_percentage(num: float) -> Percentage:
+    """Assert that the given number is a percentage."""
     assert is_percentage(num), "{num} is not a percentage"
     return num
