@@ -31,7 +31,7 @@ def main() -> None:
         while old_version in file_content:
             file_content = file_content.replace(old_version, new_version, 1)
             count += 1
-        assert count == 1, "couldn't properly change the version in setup.py... aborting"
+        assert count == 1, "couldn't properly change the version in setup.py. aborting"
     with setup_path.open("w") as fhandle:
         fhandle.write(file_content)
     print("modified setup.py")

@@ -16,7 +16,7 @@ setup(
     packages=find_packages(exclude=["tests.*", "tests"]),
     package_data={"teext": ["py.typed"]},
     python_requires=">=3.7",
-    install_requires=[],
+    install_requires=["typing_extensions >= 3.10"],
     classifiers=[
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",

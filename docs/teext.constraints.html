@@ -58,6 +58,45 @@
 </tr>
 </tbody>
 </table>
+<p><strong>Functions:</strong></p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#teext.constraints.assert_fraction" title="teext.constraints.assert_fraction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assert_fraction</span></code></a>(num)</p></td>
+<td><p>Assert that the given number is a fraction.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#teext.constraints.assert_natural_num" title="teext.constraints.assert_natural_num"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assert_natural_num</span></code></a>(num)</p></td>
+<td><p>Assert that the given number is a natural number.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#teext.constraints.assert_percentage" title="teext.constraints.assert_percentage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assert_percentage</span></code></a>(num)</p></td>
+<td><p>Assert that the given number is a percentage.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#teext.constraints.assert_positive_int" title="teext.constraints.assert_positive_int"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assert_positive_int</span></code></a>(num)</p></td>
+<td><p>Assert that the given number is a positive integer.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#teext.constraints.assert_prob" title="teext.constraints.assert_prob"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assert_prob</span></code></a>(num)</p></td>
+<td><p>Assert that the given number is a probability.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#teext.constraints.is_fraction" title="teext.constraints.is_fraction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_fraction</span></code></a>(num)</p></td>
+<td><p>Check whether the given number is a fraction.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#teext.constraints.is_natural_num" title="teext.constraints.is_natural_num"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_natural_num</span></code></a>(num)</p></td>
+<td><p>Check whether the given number is a natural number.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#teext.constraints.is_percentage" title="teext.constraints.is_percentage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_percentage</span></code></a>(num)</p></td>
+<td><p>Check whether the given number is a percentage.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#teext.constraints.is_positive_int" title="teext.constraints.is_positive_int"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_positive_int</span></code></a>(num)</p></td>
+<td><p>Check whether the given number is a positive integer.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#teext.constraints.is_prob" title="teext.constraints.is_prob"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_prob</span></code></a>(num)</p></td>
+<td><p>Check whether the given number is a probability.</p></td>
+</tr>
+</tbody>
+</table>
 <dl class="py data">
 <dt class="sig sig-object py" id="teext.constraints.Fraction">
 <span class="sig-name descname"><span class="pre">Fraction</span></span><a class="headerlink" href="#teext.constraints.Fraction" title="Permalink to this definition">¶</a></dt>
@@ -91,6 +130,146 @@
 <span class="sig-name descname"><span class="pre">Probability</span></span><a class="headerlink" href="#teext.constraints.Probability" title="Permalink to this definition">¶</a></dt>
 <dd><p>A type for probabilities (i.e., floats between 0 and 1, inclusive).</p>
 <p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="teext.constraints.assert_fraction">
+<span class="sig-name descname"><span class="pre">assert_fraction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#teext.constraints.assert_fraction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assert that the given number is a fraction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>num</strong> (<em>float</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Fraction</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="teext.constraints.assert_natural_num">
+<span class="sig-name descname"><span class="pre">assert_natural_num</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#teext.constraints.assert_natural_num" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assert that the given number is a natural number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>num</strong> (<em>int</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>NaturalNum</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="teext.constraints.assert_percentage">
+<span class="sig-name descname"><span class="pre">assert_percentage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#teext.constraints.assert_percentage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assert that the given number is a percentage.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>num</strong> (<em>float</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Percentage</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="teext.constraints.assert_positive_int">
+<span class="sig-name descname"><span class="pre">assert_positive_int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#teext.constraints.assert_positive_int" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assert that the given number is a positive integer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>num</strong> (<em>int</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>PositiveInt</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="teext.constraints.assert_prob">
+<span class="sig-name descname"><span class="pre">assert_prob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#teext.constraints.assert_prob" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assert that the given number is a probability.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>num</strong> (<em>float</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Probability</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="teext.constraints.is_fraction">
+<span class="sig-name descname"><span class="pre">is_fraction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#teext.constraints.is_fraction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether the given number is a fraction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>num</strong> (<em>float</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>typing_extensions.TypeGuard[Fraction]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="teext.constraints.is_natural_num">
+<span class="sig-name descname"><span class="pre">is_natural_num</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#teext.constraints.is_natural_num" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether the given number is a natural number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>num</strong> (<em>int</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>typing_extensions.TypeGuard[NaturalNum]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="teext.constraints.is_percentage">
+<span class="sig-name descname"><span class="pre">is_percentage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#teext.constraints.is_percentage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether the given number is a percentage.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>num</strong> (<em>float</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>typing_extensions.TypeGuard[Percentage]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="teext.constraints.is_positive_int">
+<span class="sig-name descname"><span class="pre">is_positive_int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#teext.constraints.is_positive_int" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether the given number is a positive integer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>num</strong> (<em>int</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>typing_extensions.TypeGuard[PositiveInt]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="teext.constraints.is_prob">
+<span class="sig-name descname"><span class="pre">is_prob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#teext.constraints.is_prob" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether the given number is a probability.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>num</strong> (<em>float</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>typing_extensions.TypeGuard[Probability]</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
