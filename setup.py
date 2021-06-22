@@ -5,7 +5,7 @@ with open("README.md") as f:
 
 setup(
     name="teext",
-    version="0.1.2",
+    version="0.1.3",
     author="PAL",
     author_email="info@predictive-analytics-lab.com",
     description="Typing extensions extensions",
