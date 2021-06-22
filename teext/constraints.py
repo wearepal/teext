@@ -1,83 +1,100 @@
 """Types that express a constraint."""
-from typing import Any, Callable, Dict, NewType, cast
+from typing import NewType
+from typing_extensions import TypeGuard
 
-__all__ = ["Fraction", "NaturalNum", "Percentage", "PositiveInt", "Probability", "TYPE_HOOKS"]
+__all__ = [
+    "Fraction",
+    "NaturalNum",
+    "Percentage",
+    "PositiveInt",
+    "Probability",
+    "assert_fraction",
+    "assert_natural_num",
+    "assert_percentage",
+    "assert_positive_int",
+    "assert_prob",
+    "is_fraction",
+    "is_natural_num",
+    "is_percentage",
+    "is_positive_int",
+    "is_prob",
+]
 
-# ========================================= natural number ========================================
+# =================================== natural number ===================================
 NaturalNum = NewType("NaturalNum", int)
 """A type for natural numbers (i.e., integers without the negative numbers)."""
 
 
-def _assert_natural_number(num: int) -> NaturalNum:
-    num = int(num)  # if it can be converted to a natural number, it's also fine
-    assert num >= 0, f"{num} is not a natural number"
-    return cast(NaturalNum, num)
+def is_natural_num(num: int) -> TypeGuard[NaturalNum]:
+    """Check whether the given number is a natural number."""
+    return num >= 0
 
 
-_assert_natural_number.__supertype__ = NaturalNum.__supertype__  # type: ignore[attr-defined]
-NaturalNum = _assert_natural_number  # type: ignore[misc,assignment]
+def assert_natural_num(num: int) -> NaturalNum:
+    """Assert that the given number is a natural number."""
+    assert is_natural_num(num), f"{num} is not a natural number"
+    return num
 
-# ======================================== positive integer =======================================
+
+# ================================== positive integer ==================================
 PositiveInt = NewType("PositiveInt", int)
 """A type for positive integers."""
 
 
-def _assert_positive_int(num: int) -> PositiveInt:
-    num = int(num)  # if it can be converted to a positive int, it's also fine
-    assert num > 0, f"{num} is not a positive integer"
-    return cast(PositiveInt, num)
+def is_positive_int(num: int) -> TypeGuard[PositiveInt]:
+    """Check whether the given number is a positive integer."""
+    return num > 0
 
 
-_assert_positive_int.__supertype__ = PositiveInt.__supertype__  # type: ignore[attr-defined]
-PositiveInt = _assert_positive_int  # type: ignore[misc,assignment]
+def assert_positive_int(num: int) -> PositiveInt:
+    """Assert that the given number is a positive integer."""
+    assert is_positive_int(num), "{num} is not a positive integer"
+    return num
 
-# ============================================ fraction ===========================================
+
+# ====================================== fraction ======================================
 Fraction = NewType("Fraction", float)
 """A type for fractions (i.e., floats between 0 and 1, inclusive)."""
 
 
-def _assert_fraction(num: float) -> Fraction:
-    num = float(num)  # if it can be converted to a fraction, it's also fine
-    assert 0 <= num <= 1, f"{num} is not a fraction"
-    return cast(Fraction, num)
+def is_fraction(num: float) -> TypeGuard[Fraction]:
+    """Check whether the given number is a fraction."""
+    return 0 <= num <= 1
 
 
-_assert_fraction.__supertype__ = Fraction.__supertype__  # type: ignore[attr-defined]
-Fraction = _assert_fraction  # type: ignore[misc,assignment]
+def assert_fraction(num: float) -> Fraction:
+    """Assert that the given number is a fraction."""
+    assert is_fraction(num), "{num} is not a fraction"
+    return num
 
-# ========================================== probability ==========================================
+
+# ==================================== probability =====================================
 Probability = NewType("Probability", float)
 """A type for probabilities (i.e., floats between 0 and 1, inclusive)."""
 
 
-def _assert_prob(num: float) -> Probability:
-    num = float(num)  # if it can be converted to a probability, it's also fine
-    assert 0 <= num <= 1, f"{num} is not a probability"
-    return cast(Probability, num)
+def is_prob(num: float) -> TypeGuard[Probability]:
+    """Check whether the given number is a probability."""
+    return 0 <= num <= 1
 
 
-_assert_prob.__supertype__ = Probability.__supertype__  # type: ignore[attr-defined]
-Probability = _assert_prob  # type: ignore[misc,assignment]
+def assert_prob(num: float) -> Probability:
+    """Assert that the given number is a probability."""
+    assert is_prob(num), "{num} is not a probability"
+    return num
 
-# =========================================== percentage ==========================================
+
+# ===================================== percentage =====================================
 Percentage = NewType("Percentage", float)
 """A type for percentages (i.e., floats between 0 and 1, inclusive)."""
 
 
-def _assert_percentage(num: float) -> Percentage:
-    num = float(num)  # if it can be converted to a percentage, it's also fine
-    assert 0 <= num <= 1, f"{num} is not a percentage"
-    return cast(Percentage, num)
+def is_percentage(num: float) -> TypeGuard[Percentage]:
+    """Check whether the given number is a percentage."""
+    return 0 <= num <= 1
 
 
-_assert_percentage.__supertype__ = Percentage.__supertype__  # type: ignore[attr-defined]
-Percentage = _assert_percentage  # type: ignore[misc,assignment]
-
-
-TYPE_HOOKS: Dict[type, Callable[[Any], Any]] = {
-    Fraction: _assert_fraction,
-    NaturalNum: _assert_natural_number,
-    Percentage: _assert_percentage,
-    PositiveInt: _assert_positive_int,
-    Probability: _assert_prob,
-}
+def assert_percentage(num: float) -> Percentage:
+    """Assert that the given number is a percentage."""
+    assert is_percentage(num), "{num} is not a percentage"
+    return num

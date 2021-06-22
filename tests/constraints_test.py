@@ -1,55 +1,47 @@
 """Tests for constraints."""
-from pytest import raises
-
 import teext as tx
 
 
 def test_natural_num() -> None:
-    x: tx.NaturalNum = tx.NaturalNum(0)
+    x: tx.NaturalNum
+    y: int = 0
+    assert tx.is_natural_num(y)
+    x = y
     assert isinstance(x, int)
-
-    with raises(AssertionError):
-        tx.NaturalNum(-2)
-
-
-def test_natural_num_from_str() -> None:
-    x: tx.NaturalNum = tx.NaturalNum("0")  # type: ignore[arg-type]
-    assert isinstance(x, int)
-
-    with raises(AssertionError):
-        tx.NaturalNum("-2")  # type: ignore[arg-type]
-
-    with raises(ValueError):
-        tx.NaturalNum("asdf")  # type: ignore[arg-type]
+    assert not tx.is_natural_num(-2)
 
 
 def test_positive_int() -> None:
-    x: tx.PositiveInt = tx.PositiveInt(5)
+    x: tx.PositiveInt
+    y: int = 5
+    assert tx.is_positive_int(y)
+    x = y
     assert isinstance(x, int)
-
-    with raises(AssertionError):
-        tx.PositiveInt(0)
+    assert not tx.is_positive_int(0)
 
 
 def test_fraction() -> None:
-    x: tx.Fraction = tx.Fraction(0.7)
+    x: tx.Fraction
+    y: float = 0.7
+    assert tx.is_fraction(y)
+    x = y
     assert isinstance(x, float)
-
-    with raises(AssertionError):
-        tx.Fraction(1.2)
+    assert not tx.is_fraction(1.2)
 
 
 def test_percentage() -> None:
-    x: tx.Percentage = tx.Percentage(1.0)
+    x: tx.Percentage
+    y: float = 1.0
+    assert tx.is_percentage(y)
+    x = y
     assert isinstance(x, float)
-
-    with raises(AssertionError):
-        tx.Percentage(1.2)
+    assert not tx.is_percentage(1.2)
 
 
 def test_probability() -> None:
-    x: tx.Probability = tx.Probability(0.0)
+    x: tx.Probability
+    y: float = 0.0
+    assert tx.is_prob(y)
+    x = y
     assert isinstance(x, float)
-
-    with raises(AssertionError):
-        tx.Probability(10)
+    assert not tx.is_prob(10)
