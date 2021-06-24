@@ -1,4 +1,6 @@
+from dataclasses import dataclass
 from typing import Generic, TypeVar, Union
+from typing_extensions import final
 
 __all__ = ["Err", "Ok", "Result"]
 
@@ -7,20 +9,16 @@ T = TypeVar("T")
 E = TypeVar("E", bound=Exception)
 
 
+@final
+@dataclass(frozen=True)
 class Ok(Generic[T]):
-    def __init__(self, value: T) -> None:
-        self._value = value
-
-    def ok(self) -> T:
-        return self._value
+    value: T
 
 
+@final
+@dataclass(frozen=True)
 class Err(Generic[E]):
-    def __init__(self, e: E) -> None:
-        self._e = e
-
-    def err(self) -> E:
-        return self._e
+    error: E
 
 
 Result = Union[Ok[T], Err[E]]
