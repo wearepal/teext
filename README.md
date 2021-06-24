@@ -13,13 +13,13 @@ These types are most useful in conjunction with static type checkers like mypy.
 ```python
 import teext as tx
 
-a = tx.PositiveInt(5)  # OK
-
 def f(x: tx.PositiveInt) -> None:
     print(x)
-    
+
+a = 5
+assert tx.is_positive_int(a)
 f(a)  # OK
 f(7)  # works at runtime but mypy gives error
 
-b = tx.PositiveInt(-3)  # AssertionError
+assert tx.is_positive_int(-3)  # AssertionError
 ```
