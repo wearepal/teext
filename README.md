@@ -2,11 +2,11 @@
 
 Package which provides useful types.
 
-### [Documentation](https://predictive-analytics-lab.com/teext/)
+### [Documentation](https://wearepal.github.io/teext/)
 
 ## Examples
 
-### Constraint types without runtime overhead
+### Value-constraint types without runtime overhead
 
 These types are most useful in conjunction with static type checkers like mypy.
 
