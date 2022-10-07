@@ -1,7 +1,7 @@
 """Utils for dealing with `Optional` types."""
-from typing import Callable, Optional, TypeVar
+from typing import Callable, Generic, Optional, TypeVar, Union
 
-__all__ = ["maybe_apply", "unwrap"]
+__all__ = ["Maybe", "Some", "maybe_apply", "unwrap"]
 
 T = TypeVar("T")
 
@@ -22,3 +22,14 @@ def unwrap(value: Optional[T], default: T) -> T:
 def maybe_apply(value: Optional[T], func: Callable[[T], Optional[T]]) -> Optional[T]:
     """Apply a function to a value if the value is not `None`."""
     return func(value) if value is not None else None
+
+
+class Some(Generic[T]):
+    __slots__ = ("_content",)
+    __match_args__ = ("_content",)
+
+    def __init__(self, content: T, /):
+        self._content = content
+
+
+Maybe = Union[Some[T], None]

@@ -47,3 +47,10 @@ def test_maybe_apply_none() -> None:
 
     y = tx.maybe_apply(a, _double)
     assert y is None
+
+
+def test_maybe() -> None:
+    x: tx.Maybe[str] = tx.Some("foo")
+
+    # (simulating `match`)
+    assert getattr(x, tx.Some.__match_args__[0]) == "foo"
