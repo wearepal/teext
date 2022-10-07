@@ -1,8 +1,8 @@
 [tool.black]
-target-version = ['py37']
+target-version = ['py38']
 
 [tool.mypy]
-python_version = "3.7"
+python_version = "3.8"
 no_implicit_optional = true
 strict_equality = true
 check_untyped_defs = true
@@ -36,7 +36,6 @@ packages = [
 ]
 include=["teext/py.typed"]
 classifiers=[
-    "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
@@ -46,7 +45,7 @@ classifiers=[
 ]
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.8"
 typing-extensions = "^4.4.0"
 
 [tool.poetry.group.dev.dependencies]
