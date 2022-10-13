@@ -3,6 +3,7 @@ target-version = ['py38']
 
 [tool.mypy]
 python_version = "3.8"
+strict = true
 no_implicit_optional = true
 strict_equality = true
 check_untyped_defs = true
@@ -12,6 +13,7 @@ disallow_untyped_defs = true
 disallow_incomplete_defs = true
 warn_incomplete_stub = true
 show_error_codes = true
+implicit_reexport = false
 
 [[tool.mypy.overrides]]
 module = ["pytest.*"]
@@ -52,6 +54,7 @@ typing-extensions = "^4.4.0"
 black = "^22.10.0"
 isort = "^5.10.1"
 mypy = "^0.982"
+pytest = "^7.1.3"
 
 [build-system]
 requires = ["poetry-core"]
