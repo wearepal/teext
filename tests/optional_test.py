@@ -1,5 +1,7 @@
 import teext as tx
 
+from .util import unpack_first
+
 
 def test_optional_with_none() -> None:
     x = 3
@@ -53,4 +55,4 @@ def test_maybe() -> None:
     x: tx.Maybe[str] = tx.Some("foo")
 
     # (simulating `match`)
-    assert getattr(x, tx.Some.__match_args__[0]) == "foo"
+    assert unpack_first(x) == "foo"
