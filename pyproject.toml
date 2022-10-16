@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "teext"
-version = "0.2.0.dev1"
+dynamic = ["version"]
 description = "Typing extensions extensions"
 readme = "README.md"
 license = "Apache-2.0"
@@ -28,6 +28,9 @@ dependencies = [
     "typing_extensions >= 4.4.0",
 ]
 
+[project.urls]
+Homepage = "https://github.com/wearepal/teext"
+
 # dev dependencies
 [tool.hatch.envs.default]
 dependencies = [
@@ -37,8 +40,8 @@ dependencies = [
     "pytest~=7.1",
 ]
 
-[project.urls]
-Homepage = "https://github.com/wearepal/teext"
+[tool.hatch.version]
+path = "teext/__init__.py"
 
 [tool.hatch.build.targets.sdist]
 include = [

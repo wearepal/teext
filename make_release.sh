@@ -66,7 +66,7 @@ bump_build_publish() {
   echo "#            bump version             #"
   echo "#######################################"
   hatch version $version_bump
-  git add pyproject.toml
+  git add teext/__init__.py
 
   # clean previous build and build
   echo "#######################################"
