@@ -3,7 +3,7 @@ from typing import Callable, Optional, TypeVar, Union
 
 from .lib import Some
 
-__all__ = ["Maybe", "Some", "maybe_apply", "unwrap"]
+__all__ = ["Maybe", "Option", "Some", "maybe_apply", "unwrap"]
 
 T = TypeVar("T")
 
@@ -27,3 +27,4 @@ def maybe_apply(value: Optional[T], func: Callable[[T], Optional[T]]) -> Optiona
 
 
 Maybe = Union[Some[T], None]
+Option = Union[Some[T], None]
