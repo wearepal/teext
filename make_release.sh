@@ -7,7 +7,7 @@ set -e
 version_bump=$1
 
 case $version_bump in
-  "patch" | "minor" | "major" | "prepatch" | "preminor" | "premajor" | "prerelease")
+  "patch" | "minor" | "major" | "rc" | "dev" | "alpha" | "beta" | "release" | "post")
     echo "valid version bump: $version_bump"
     ;;
   *)
@@ -65,7 +65,7 @@ bump_build_publish() {
   echo "#######################################"
   echo "#            bump version             #"
   echo "#######################################"
-  poetry version $version_bump
+  hatch version $version_bump
   git add pyproject.toml
 
   # clean previous build and build
@@ -77,7 +77,7 @@ bump_build_publish() {
   echo "#######################################"
   echo "#            do new build             #"
   echo "#######################################"
-  poetry build
+  hatch build
 
   echo ""
   echo "#######################################"
@@ -85,7 +85,7 @@ bump_build_publish() {
   echo "#######################################"
   # to use this, set up an API token with
   #  `poetry config pypi-token.pypi <api token>`
-  poetry publish
+  hatch publish
 
   popd  # switch back to previous directory
 }
