@@ -77,6 +77,9 @@ bump_build_publish() {
   echo "#######################################"
   echo "#            do new build             #"
   echo "#######################################"
+  # one without mypyc
+  HATCH_BUILD_NO_HOOKS=true hatch build
+  # one with mypyc
   hatch build
 
   echo ""
