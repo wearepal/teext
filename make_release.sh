@@ -83,8 +83,6 @@ bump_build_publish() {
   echo "#######################################"
   echo "#          publish package            #"
   echo "#######################################"
-  # to use this, set up an API token with
-  #  `poetry config pypi-token.pypi <api token>`
   hatch publish
 
   popd  # switch back to previous directory
@@ -98,7 +96,7 @@ bump_build_publish "."
 git commit -m "Bump version"
 
 # get the version
-new_tag=v$(poetry version -s)
+new_tag=v$(hatch version)
 
 # create tag and push
 echo "#######################################"
