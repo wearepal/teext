@@ -10,7 +10,6 @@ T = TypeVar("T")
 
 
 class Some(Generic[T]):
-    __slots__ = ("_content",)
     __match_args__ = ("_content",)
 
     def __init__(self, content: T) -> None:
@@ -18,7 +17,6 @@ class Some(Generic[T]):
 
 
 class Ok(Generic[T]):
-    __slots__ = ("_value",)
     __match_args__ = ("_value",)
 
     def __init__(self, value: T) -> None:
@@ -26,7 +24,6 @@ class Ok(Generic[T]):
 
 
 class Err(Generic[T]):
-    __slots__ = ("_error",)
     __match_args__ = ("_error",)
 
     def __init__(self, error: T) -> None:
