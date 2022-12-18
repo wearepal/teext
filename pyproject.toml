@@ -51,7 +51,13 @@ include = [
 # compile `lip.py` with mypyc
 [tool.hatch.build.targets.wheel.hooks.mypyc]
 dependencies = ["hatch-mypyc"]
-include = ["/teext/lib.py"]
+# `include` doesn't work for some reason,
+# so we have to `exclude` a lot
+exclude = [
+  "__init__.py",
+  "optional.py",
+  "result.py",
+]
 mypy-args = [
   "--strict",
   "--disallow-untyped-defs",
